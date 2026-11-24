@@ -1114,6 +1114,43 @@ h1 .hero-accent {
   color: #5e7265;
 }
 
+.access-code-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  margin-right: 6px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #e8f2ee;
+  border: 1px solid #b5d2c7;
+  color: #163d34;
+  font-size: 11.5px;
+  font-weight: 750;
+  letter-spacing: 0.3px;
+}
+
+.key-location-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #fff5e3;
+  border: 1px solid #e5c68f;
+  color: #774712;
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.photo-helper {
+  margin: 0 0 8px;
+  font-size: 11.5px;
+  color: #586d60;
+  line-height: 1.45;
+}
+
 .record-box p {
   margin: 6px 0 0;
   color: #364d42;

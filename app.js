@@ -49,7 +49,7 @@
       btnRetry: 'Retry',
       trackerEyebrow: 'SITE DELIVERY TRACKER',
       trackerHeading: 'Machine & stop cards',
-      trackerSub: 'Tap a stop to confirm delivery, record serial numbers, upload serial-plate photos, or open Google Maps directions.',
+      trackerSub: 'Tap a stop to confirm delivery, enter machine start codes or key locations, upload photos of where keys are left / serial plates, or open Google Maps.',
       btnExpandAll: 'Expand all',
       btnCollapseAll: 'Collapse all',
       filterStatusLabel: 'Status',
@@ -84,6 +84,8 @@
       updatedByLabel: 'Updated by',
       serialPending: 'Serial # pending',
       serialPrefix: 'Serial #',
+      codePrefix: 'Start code:',
+      keyLocationPrefix: 'Keys:',
       extraEquipLabel: 'Additional / replacement',
       noteLabel: 'Note',
       noDeliveredQty: 'No delivered quantities recorded yet.',
@@ -93,7 +95,7 @@
       btnSaving: 'Saving…',
       btnReloadRecord: 'Reload latest record',
       quickLegend: 'Has the listed equipment arrived?',
-      quickHelp: 'Yes confirms delivery. No records 0. Open Details below to add serial numbers or notes.',
+      quickHelp: 'Yes confirms delivery. No records 0. Open Details below to add machine start codes, key locations, serial numbers, or notes.',
       yes: 'Yes',
       no: 'No',
       driverFieldLabel: 'Delivery driver / Updated by',
@@ -102,18 +104,23 @@
       newDriverPlaceholder: 'Enter full name',
       statusFieldLabel: 'Delivery status',
       dateFieldLabel: 'Delivery date',
-      detailsSummary: 'Details, serial numbers & notes',
+      detailsSummary: 'Start codes, key location, serial # & notes',
       qtyDeliveredLabel: 'Delivered qty',
       modelLabel: 'Machine / model note',
       modelPlaceholder: 'e.g. Kubota SVL75-3, SSV75, Berlon',
       serialLabel: 'Serial number',
       serialPlaceholder: 'Enter serial # or leave blank',
+      codeLabel: 'Machine start code (if coded)',
+      codePlaceholder: 'e.g. 1234 (leave blank if keyed)',
+      keyLocationLabel: 'Key location (if keyed — no code)',
+      keyLocationPlaceholder: 'e.g. Behind front right tire, magnetic box, etc.',
       extraFieldLabel: 'Additional or replacement equipment',
       extraPlaceholder: 'Optional extra attachment or swap',
       notesFieldLabel: 'Delivery notes',
       notesPlaceholder: 'Drop location on lot, contact, gate info, etc.',
-      photosAndDetails: 'Photos & delivery details',
-      photosTitle: 'Delivery & serial-plate photos',
+      photosAndDetails: 'Key location & delivery photos',
+      photosTitle: 'Key location, serial-plate & drop-off photos',
+      photosHelper: 'Upload a photo showing where the keys are left (for machines without a code) and/or the machine serial-number plate.',
       noPhotosYet: 'No photos uploaded for this stop yet.',
       choosePhotoLabel: 'Choose or take photo',
       btnUploadPhoto: 'Upload photo',
@@ -176,7 +183,7 @@
       btnRetry: 'Reintentar',
       trackerEyebrow: 'SEGUIMIENTO DE ENTREGAS',
       trackerHeading: 'Tarjetas de máquinas y paradas',
-      trackerSub: 'Toque una parada para confirmar entrega, guardar números de serie, subir fotos de placa o abrir indicaciones en Google Maps.',
+      trackerSub: 'Toque una parada para confirmar entrega, guardar códigos de arranque o ubicación de llaves, subir fotos de llaves / placa de serie o abrir Google Maps.',
       btnExpandAll: 'Expandir todo',
       btnCollapseAll: 'Contraer todo',
       filterStatusLabel: 'Estado',
@@ -211,6 +218,8 @@
       updatedByLabel: 'Actualizado por',
       serialPending: 'Serie pendiente',
       serialPrefix: 'Serie #',
+      codePrefix: 'Código:',
+      keyLocationPrefix: 'Llaves:',
       extraEquipLabel: 'Equipo adicional / reemplazo',
       noteLabel: 'Nota',
       noDeliveredQty: 'Sin cantidades entregadas registradas aún.',
@@ -220,7 +229,7 @@
       btnSaving: 'Guardando…',
       btnReloadRecord: 'Recargar registro',
       quickLegend: '¿Ya se entregó el equipo listado?',
-      quickHelp: 'Sí confirma la entrega. No registra 0. Abra Detalles abajo para agregar número de serie o notas.',
+      quickHelp: 'Sí confirma la entrega. No registra 0. Abra Detalles abajo para agregar código de arranque, ubicación de llaves, serie o notas.',
       yes: 'Sí',
       no: 'No',
       driverFieldLabel: 'Chofer / Actualizado por',
@@ -229,18 +238,23 @@
       newDriverPlaceholder: 'Escribe el nombre completo',
       statusFieldLabel: 'Estado de entrega',
       dateFieldLabel: 'Fecha de entrega',
-      detailsSummary: 'Detalles, números de serie y notas',
+      detailsSummary: 'Códigos, ubicación de llaves, serie y notas',
       qtyDeliveredLabel: 'Cant. entregada',
       modelLabel: 'Máquina / modelo',
       modelPlaceholder: 'Ej. Kubota SVL75-3, SSV75, Berlon',
       serialLabel: 'Número de serie',
       serialPlaceholder: 'Ingresa serie o déjalo vacío',
+      codeLabel: 'Código de arranque (si lleva código)',
+      codePlaceholder: 'Ej. 1234 (déjalo vacío si usa llave)',
+      keyLocationLabel: 'Ubicación de llaves (si usa llave)',
+      keyLocationPlaceholder: 'Ej. Detrás de llanta delantera derecha, caja magnética, etc.',
       extraFieldLabel: 'Equipo adicional o de reemplazo',
       extraPlaceholder: 'Accesorio extra o cambio opcional',
       notesFieldLabel: 'Notas de entrega',
       notesPlaceholder: 'Dónde se dejó en el estacionamiento, contacto, etc.',
-      photosAndDetails: 'Fotos y detalles de entrega',
-      photosTitle: 'Fotos de entrega y placa de serie',
+      photosAndDetails: 'Fotos de llaves y entrega',
+      photosTitle: 'Fotos de ubicación de llaves, placa de serie y entrega',
+      photosHelper: 'Sube una foto de dónde quedaron las llaves (en máquinas sin código) y/o la placa del número de serie.',
       noPhotosYet: 'Aún no hay fotos para esta parada.',
       choosePhotoLabel: 'Elegir o tomar foto',
       btnUploadPhoto: 'Subir foto',
@@ -370,10 +384,12 @@
           key: def.key,
           quantity: savedItem && savedItem.quantity !== null && savedItem.quantity !== undefined ? String(savedItem.quantity) : '',
           model: savedItem?.model || '',
-          serial: savedItem?.serial || ''
+          serial: savedItem?.serial || '',
+          code: savedItem?.code || '',
+          keyLocation: savedItem?.keyLocation || ''
         };
       }),
-      detailsOpen: Boolean(existing?.note || existing?.extraEquipment || existing?.items?.some((i) => i.serial || i.model)),
+      detailsOpen: Boolean(existing?.note || existing?.extraEquipment || existing?.items?.some((i) => i.serial || i.model || i.code || i.keyLocation)),
       saving: false,
       error: '',
       conflict: false
@@ -518,7 +534,7 @@
         rec?.driver || '',
         rec?.note || '',
         rec?.extraEquipment || '',
-        ...(rec?.items || []).flatMap((i) => [i.model || '', i.serial || '']),
+        ...(rec?.items || []).flatMap((i) => [i.model || '', i.serial || '', i.code || '', i.keyLocation || '']),
         ...stop.items.flatMap((i) => [i.labelEn, i.labelEs, i.detailEn, i.detailEs])
       ]
         .join(' ')
@@ -553,7 +569,9 @@
       if (saved?.model) metaParts.push(saved.model);
       if (saved?.serial) metaParts.push(`${t('serialPrefix')} ${saved.serial}`);
       else if (rec.status === 'delivered' || (saved?.quantity && saved.quantity > 0)) metaParts.push(t('serialPending'));
-      return `<li><strong>${esc(qtyText)} ${esc(label)}</strong>${metaParts.length ? `<span>${esc(metaParts.join(' · '))}</span>` : ''}</li>`;
+      const codePill = saved?.code ? `<span class="access-code-pill">${esc(t('codePrefix'))} ${esc(saved.code)}</span>` : '';
+      const keyPill = saved?.keyLocation ? `<span class="key-location-pill">${esc(t('keyLocationPrefix'))} ${esc(saved.keyLocation)}</span>` : '';
+      return `<li><strong>${esc(qtyText)} ${esc(label)}</strong>${metaParts.length ? `<span>${esc(metaParts.join(' · '))}</span>` : ''}${codePill || keyPill ? `<div>${codePill}${keyPill}</div>` : ''}</li>`;
     });
 
     const savedWhen = formatTimestamp(rec.updatedAt);
@@ -594,7 +612,7 @@
 
     const unitFields = stop.items
       .map((def) => {
-        const dItem = draft.items.find((i) => i.key === def.key) || { key: def.key, quantity: '', model: '', serial: '' };
+        const dItem = draft.items.find((i) => i.key === def.key) || { key: def.key, quantity: '', model: '', serial: '', code: '', keyLocation: '' };
         const label = state.lang === 'es' ? def.labelEs : def.labelEn;
         return `<fieldset class="unit-fieldset">
           <legend>${def.qty}× ${esc(label)}</legend>
@@ -612,6 +630,16 @@
             <span>${esc(t('modelLabel'))}</span>
             <input type="text" maxlength="200" name="model-${esc(def.key)}" value="${esc(dItem.model)}" placeholder="${esc(t('modelPlaceholder'))}">
           </label>
+          ${def.key === 'skid' ? `<div class="editor-row-2">
+            <label class="editor-field">
+              <span>${esc(t('codeLabel'))}</span>
+              <input type="text" maxlength="60" name="code-${esc(def.key)}" value="${esc(dItem.code)}" placeholder="${esc(t('codePlaceholder'))}">
+            </label>
+            <label class="editor-field">
+              <span>${esc(t('keyLocationLabel'))}</span>
+              <input type="text" maxlength="300" name="keyloc-${esc(def.key)}" value="${esc(dItem.keyLocation)}" placeholder="${esc(t('keyLocationPlaceholder'))}">
+            </label>
+          </div>` : ''}
         </fieldset>`;
       })
       .join('');
@@ -738,6 +766,7 @@
               <summary><span>${esc(t('photosAndDetails'))}</span><span class="chev" aria-hidden="true">⌄</span></summary>
               <div class="card-photos" data-photo-stop="${esc(stop.id)}">
                 <h4>${esc(t('photosTitle'))}</h4>
+                <p class="photo-helper">${esc(t('photosHelper'))}</p>
                 <div class="photo-gallery-slot">${renderPhotosMarkup(stop.id)}</div>
                 <form class="photo-form" data-photo-form="${esc(stop.id)}">
                   <label>
@@ -775,7 +804,9 @@
       key: def.key,
       quantity: form.elements[`qty-${def.key}`].value,
       model: form.elements[`model-${def.key}`].value,
-      serial: form.elements[`serial-${def.key}`].value
+      serial: form.elements[`serial-${def.key}`].value,
+      code: form.elements[`code-${def.key}`]?.value || '',
+      keyLocation: form.elements[`keyloc-${def.key}`]?.value || ''
     }));
   }
 
@@ -1091,7 +1122,9 @@
       key: item.key,
       quantity: item.quantity === '' ? null : Number(item.quantity),
       model: item.model.trim(),
-      serial: item.serial.trim()
+      serial: item.serial.trim(),
+      code: (item.code || '').trim(),
+      keyLocation: (item.keyLocation || '').trim()
     }));
 
     if (state.storageMode === 'local') {
@@ -1376,9 +1409,13 @@
       const rec = state.records.get(stop.id);
       const st = rec?.status || 'unconfirmed';
       const serials = (rec?.items || []).map((i) => i.serial).filter(Boolean).join(', ');
+      const codes = (rec?.items || []).map((i) => i.code).filter(Boolean).join(', ');
+      const keys = (rec?.items || []).map((i) => i.keyLocation).filter(Boolean).join(', ');
       const extra = [
         statusLabel(st),
         rec?.driver ? rec.driver : '',
+        codes ? `Code: ${codes}` : '',
+        keys ? `Keys: ${keys}` : '',
         serials ? `S/N: ${serials}` : '',
         rec?.note ? rec.note : ''
       ]
@@ -1404,10 +1441,12 @@
   }
 
   function exportCsv() {
-    const headers = ['Stop #', 'Group', 'Address', 'Assigned Equipment', 'Status', 'Delivery Date', 'Driver', 'Serial Numbers', 'Notes'];
+    const headers = ['Stop #', 'Group', 'Address', 'Assigned Equipment', 'Status', 'Delivery Date', 'Driver', 'Start Code', 'Key Location', 'Serial Numbers', 'Notes'];
     const csvCell = (val) => `"${String(val ?? '').replace(/"/g, '""')}"`;
     const rows = sheet.stops.map((stop) => {
       const rec = state.records.get(stop.id);
+      const codes = (rec?.items || []).map((i) => i.code).filter(Boolean).join('; ');
+      const keys = (rec?.items || []).map((i) => i.keyLocation).filter(Boolean).join('; ');
       const serials = (rec?.items || [])
         .filter((i) => i.serial)
         .map((i) => `${i.key}: ${i.serial}`)
@@ -1420,6 +1459,8 @@
         rec?.status || 'unconfirmed',
         rec?.deliveryDate || '',
         rec?.driver || '',
+        codes,
+        keys,
         serials,
         rec?.note || (stop.special ? stop.specialNoteEn : '')
       ].map(csvCell).join(',');

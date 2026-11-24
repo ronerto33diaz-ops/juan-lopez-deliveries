@@ -4,7 +4,7 @@ window.DELIVERY_SHEET = {
   deliveryDate: '2026-11-25',
   dateLabelEn: 'Wednesday, November 25, 2026',
   dateLabelEs: 'Miércoles 25 de noviembre de 2026',
-  drivers: ['Juan Lopez', 'Abraham', 'Roberto', 'Lucas', 'Javier', 'Emmanuel', 'Omar'],
+  drivers: ['Abraham', 'Roberto', 'Lucas', 'Javier', 'Emmanuel', 'Omar', 'Juan Lopez'],
   changeNotice: {
     confirmedAtEn: 'Confirmed by Juan on Nov 24, 4:58 PM',
     confirmedAtEs: 'Cambio confirmado por Juan el 24 de noviembre, 4:58 p. m.',

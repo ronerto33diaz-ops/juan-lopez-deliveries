@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1e2930">
+  <meta name="description" content="Durango Equipment Sales and Rentals — Juan Lopez delivery tracker for Wednesday, November 25, 2026.">
+  <title>Juan Lopez Deliveries · Durango</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Durango Equipment Sales and Rentals">
+        <span class="durango-logo-frame">
+          <img class="durango-logo" src="durango-logo.png" alt="Durango Equipment Sales and Rentals">
+        </span>
+      </a>
+      <div class="workspace-label" data-i18n="workspaceLabel">OPERATIONS WORKSPACE</div>
+      <nav class="sidebar-nav">
+        <a class="nav-item active" href="#stops-section" data-nav="stops">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v11H3zM14 11h4l3 4v3h-7M7 7V4h6M6 18a2 2 0 1 0 4 0m6 0a2 2 0 1 0 4 0"/></svg>
+          <span class="nav-text" data-i18n="navStops">Delivery stops</span>
+          <span class="nav-badge" id="nav-stops-count">9</span>
+        </a>
+        <a class="nav-item" href="#table-section" data-nav="table">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM4 10h16M10 4v16M4 15h16"/></svg>
+          <span class="nav-text" data-i18n="navTable">Full route list</span>
+        </a>
+        <a class="nav-item" href="#activity-section" data-nav="activity">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5zM14 3v5h5M8 12h8M8 16h8"/></svg>
+          <span class="nav-text" data-i18n="navActivity">Activity & notes</span>
+          <span class="nav-badge" id="nav-activity-count">0</span>
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="avatar">RD</div>
+        <div>
+          <strong>Roberto Diaz</strong>
+          <small data-i18n="sidebarSub">Juan Lopez &amp; Abraham · Live</small>
+        </div>
+        <span class="private-dot" title="Shared live board"></span>
+      </div>
+    </aside>
+
+    <main id="top">
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <span class="crumb" data-i18n="crumbOps">Operations</span>
+          <span class="separator">/</span>
+          <span data-i18n="crumbPage">Juan Lopez deliveries</span>
+        </div>
+        <div class="topbar-actions">
+          <span class="snapshot"><i></i><span data-i18n="livePill">Nov 25, 2026 · Shared live board</span></span>
+          <button class="language-toggle" id="language-toggle" type="button" aria-label="Ver sitio en español">Español</button>
+        </div>
+      </header>
+
+      <section class="page-heading">
+        <div class="heading-copy">
+          <div class="eyebrow" data-i18n="eyebrow">DELIVERY COORDINATION · NOV 25, 2026</div>
+          <h1>
+            <span data-i18n="heroLine1">Juan Lopez deliveries.</span><br>
+            <span class="hero-accent" data-i18n="heroLine2">Clear at a glance.</span>
+          </h1>
+          <p data-i18n="heroSubtitle">Wednesday, November 25, 2026 — 9 skid steers + 2 rental Berlon spreaders across 9 stops for Juan Lopez &amp; Abraham.</p>
+        </div>
+        <div class="heading-actions">
+          <button class="button secondary" id="share-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"/></svg>
+            <span data-i18n="btnShare">Share update</span>
+          </button>
+          <button class="button secondary" id="print-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6z"/></svg>
+            <span data-i18n="btnPrint">Print handoff</span>
+          </button>
+          <button class="button primary" id="export-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>
+            <span data-i18n="btnExport">Export delivery list</span>
+          </button>
+        </div>
+
+        <div class="quick-dashboard">
+          <label class="quick-lookup">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg>
+            <span data-i18n="lookupLabel">Quick equipment lookup</span>
+            <input id="global-search" type="search" placeholder="Address, store, equipment, serial #, or driver" aria-label="Search address, store, equipment, serial number, or driver">
+          </label>
+          <div class="equipment-scoreboard" aria-label="Equipment delivery totals">
+            <div class="score delivered">
+              <span data-i18n="scoreDelivered">Delivered</span>
+              <strong id="score-delivered">0</strong>
+            </div>
+            <div class="score not-delivered">
+              <span data-i18n="scoreNotDelivered">Not delivered</span>
+              <strong id="score-not-delivered">0</strong>
+            </div>
+            <div class="score pending">
+              <span data-i18n="scorePending">Pending</span>
+              <strong id="score-pending">11</strong>
+            </div>
+            <div class="score total">
+              <span data-i18n="scoreTotal">Total assigned</span>
+              <strong id="score-total">11</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="notice" id="change-notice">
+        <span class="notice-icon" aria-hidden="true">!</span>
+        <div>
+          <strong id="notice-title">9424 S. Pulaski replaces 4650 W. 103rd St. (No pusher).</strong>
+          <p id="notice-body">The stop at 4650 W. 103rd St. is canceled. Deliver 1 of Juan’s skid steers without a pusher to 9424 S. Pulaski (street address only confirmed).</p>
+          <small class="notice-meta" id="notice-meta">Confirmed by Juan on Nov 24, 4:58 PM</small>
+        </div>
+        <button type="button" class="notice-jump" id="jump-pulaski">
+          <span data-i18n="jumpStop09">View stop #09</span> <span aria-hidden="true">↓</span>
+        </button>
+      </div>
+
+      <section class="metrics" aria-label="Delivery summary">
+        <div>
+          <span data-i18n="metricStopsLabel">ACTIVE STOPS</span>
+          <strong>09 <small data-i18n="metricStopsSub">2 Walmart · 6 Jewel-Osco · 1 No pusher</small></strong>
+        </div>
+        <div>
+          <span data-i18n="metricEquipLabel">EQUIPMENT SCHEDULED</span>
+          <strong>9 <small data-i18n="metricSkids">skids</small><em>+</em>2 <small data-i18n="metricBerlon">Berlon spreaders</small></strong>
+        </div>
+        <div>
+          <span data-i18n="metricProgressLabel">STOP CONFIRMATION</span>
+          <strong id="metric-progress-value">0 / 9 <small id="metric-progress-sub">stops confirmed</small></strong>
+        </div>
+      </section>
+
+      <div class="shared-banner" role="note">
+        <span class="shared-banner-dot" id="storage-mode-dot" aria-hidden="true"></span>
+        <span id="shared-banner-text" data-i18n="sharedBanner">Anyone with this link can view and update delivery records. Save only confirmed information.</span>
+        <button type="button" class="refresh-link" id="refresh-records" data-i18n="btnRefresh">Refresh now</button>
+      </div>
+
+      <div id="sync-error-banner" class="sync-error-banner" hidden>
+        <span id="sync-error-text"></span>
+        <button type="button" id="retry-sync-btn" class="button secondary" data-i18n="btnRetry">Retry</button>
+      </div>
+
+      <section id="stops-section" class="stops-section">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow" data-i18n="trackerEyebrow">SITE DELIVERY TRACKER</div>
+            <h2 data-i18n="trackerHeading">Machine &amp; stop cards</h2>
+            <p data-i18n="trackerSub">Tap a stop to confirm delivery, record serial numbers, upload serial-plate photos, or open Google Maps directions.</p>
+          </div>
+          <div class="section-controls">
+            <button type="button" class="button secondary small-btn" id="toggle-expand-all" data-i18n="btnExpandAll">Expand all</button>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="group-tabs" id="group-tabs" role="tablist" aria-label="Route groups"></div>
+          <label class="status-filter">
+            <span data-i18n="filterStatusLabel">Status</span>
+            <select id="status-filter" aria-label="Filter by delivery status">
+              <option value="all" data-i18n="statusAll">All stops</option>
+              <option value="unconfirmed" data-i18n="statusUnconfirmed">Unconfirmed</option>
+              <option value="delivered" data-i18n="statusDelivered">Delivered</option>
+              <option value="partial" data-i18n="statusPartial">Partial delivery</option>
+              <option value="not_delivered" data-i18n="statusNotDelivered">Not delivered</option>
+              <option value="on_hold" data-i18n="statusOnHold">On hold</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="stop-cards" class="stop-cards" aria-live="polite"></div>
+      </section>
+
+      <section id="table-section" class="table-section">
+        <details class="table-details">
+          <summary>
+            <span data-i18n="tableSummaryTitle">Full route table</span>
+            <small id="table-count-label">9 stops · 11 units</small>
+          </summary>
+          <div class="route-table-wrap" tabindex="0">
+            <table class="route-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col" data-i18n="colGroup">Group</th>
+                  <th scope="col" data-i18n="colAddress">Address</th>
+                  <th scope="col" data-i18n="colEquipment">Assigned equipment</th>
+                  <th scope="col" data-i18n="colStatus">Delivery status</th>
+                  <th scope="col" data-i18n="colUpdated">Driver / Updated</th>
+                </tr>
+              </thead>
+              <tbody id="route-table-body"></tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <section id="activity-section" class="activity-section">
+        <details class="delivery-activity-panel" id="activity-panel" open>
+          <summary>
+            <div>
+              <b data-i18n="activityTitle">Team activity &amp; comments</b>
+              <small data-i18n="activitySub">Live log of delivery confirmations, serial numbers, photos, and notes.</small>
+            </div>
+            <em id="activity-badge">0 updates</em>
+          </summary>
+          <form class="activity-compose" id="comment-form">
+            <label>
+              <span data-i18n="fieldYourName">Your name</span>
+              <input name="author" id="comment-author" required maxlength="80" placeholder="Juan Lopez / Abraham">
+            </label>
+            <label>
+              <span data-i18n="fieldStop">Stop</span>
+              <select name="stopId" id="comment-stop"></select>
+            </label>
+            <label class="full-span">
+              <span data-i18n="fieldComment">Comment or field note</span>
+              <textarea name="comment" id="comment-text" rows="2" maxlength="2000" required placeholder="Dropped behind garden center, serial plate uploaded, gate code, etc."></textarea>
+            </label>
+            <div class="activity-compose-actions">
+              <button type="submit" class="activity-submit" id="comment-submit" data-i18n="btnPostComment">Post note</button>
+              <p class="activity-error" id="comment-error" role="alert"></p>
+            </div>
+          </form>
+          <ol id="activity-list"></ol>
+        </details>
+      </section>
+
+      <section class="print-only" id="print-sheet" aria-label="Printable delivery sheet"></section>
+
+      <footer>
+        <strong>Durango Equipment Sales and Rentals</strong>
+        <span data-i18n="footerNote">Anyone with this link can view and update delivery records for Juan Lopez’s November 25, 2026 route. No automatic messages or dispatch orders are sent.</span>
+      </footer>
+    </main>
+  </div>
+
+  <div id="photo-lightbox" class="photo-lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo preview">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close photo">×</button>
+    <img id="lightbox-img" alt="Delivery photo preview">
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
